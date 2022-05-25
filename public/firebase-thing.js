@@ -1,10 +1,51 @@
-// import { initializeApp } from 'firebase/app';
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js"
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// // TODO: Replace the following with your app's Firebase project configuration
-// const firebaseConfig = {
-//   //...
-// };
 
-// const app = initializeApp(firebaseConfig);
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDf4PtLRnAZ3mZ-ba2IN_EOBYtbLx2kDII",
+  authDomain: "krub-embed-boooom.firebaseapp.com",
+  databaseURL: "https://krub-embed-boooom-default-rtdb.firebaseio.com",
+  projectId: "krub-embed-boooom",
+  storageBucket: "krub-embed-boooom.appspot.com",
+  messagingSenderId: "740697460413",
+  appId: "1:740697460413:web:3bda60465c55f0ae2af1d4",
+  measurementId: "G-KMKZ4ZV44T"
+};
 
-// console.log(app);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getDatabase(app , "https://krub-embed-boooom-default-rtdb.firebaseio.com/");
+
+function insertTheFuckingData() {
+  set(ref(db, "motherFUckkeerLetMein"), {
+    baba: "pop",
+    momo: 1982739,
+  })
+  .then(() => {alert("done done")})
+  .catch(() => {alert("error bro")});
+}
+
+function getMeDataNoi(updater) {
+  onValue(ref(db, "number"),  (snapshot) => {
+    const data = snapshot.val();
+    // console.log(data);
+    updater(data);
+  });
+}
+
+// insertTheFuckingData();
+getMeDataNoi(updateBox);
+
+function updateBox (data_to_display) {
+  const box =document.querySelector('.Box');
+  box.textContent = data_to_display;
+}
+
+export { getMeDataNoi };
