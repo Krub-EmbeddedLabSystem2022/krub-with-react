@@ -34,23 +34,25 @@ body {
       left: 87%;
   }
   #Box{
-     
-      background-color: rgb(255, 255, 0,0.7);
+      background-color: rgb(255, 255, 0,0.4);
       position: absolute;
-      top: 60%;
-      width: 300px;
-      height: 300px;
-
-    
-  }
-  @keyframes test1{
-33% {background-color: aqua;}
-66% {background-color: red; }
-
-  }
-  
+      top: 0%;
+      width: 40%;
+      height: 100%;
+      animation-name: slideInFromLeft;
+      animation-duration: 2s;
+     
+  }  
   img{
       width: 200px;
       height: auto;
   }
+  @keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
   
