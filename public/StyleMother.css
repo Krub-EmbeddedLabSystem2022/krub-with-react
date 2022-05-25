@@ -1,0 +1,38 @@
+body {
+    background-color: aliceblue;
+    background-image: url("Photo/S__6201606.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }  
+  .shef{
+      background-color: aqua;
+      width: 170px ;
+      height: auto;
+      border: 15px ;
+      padding: 20px;
+      margin: 20px;
+      position: absolute;
+      top: 40%;
+      left: 40%;
+  }
+  .box1 {
+     color: whitesmoke;
+      font-size: 50px;
+      text-align: center;
+  }
+  h1 {
+      font-size: 124px;
+      color: aliceblue;
+      text-align: center;
+  }
+  .img1{
+      position: absolute;
+      top: 58%;
+      left: 87%;
+  }
+  
+  img{
+      width: 200px;
+      height: auto;
+  }
+  
