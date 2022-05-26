@@ -1,13 +1,10 @@
-
-function Animate1(){
-const hi = document.getElementById("Box");
-hi.style.animation="test1 2s";
-
-
-}
-
-function Animate2(){
-    const hi = document.getElementById("Box");
-    hi.style.animation=null;
-    
+var num = document.getElementById("number");
+var hi = document.getElementById("pee");
+var N = 0;
+setInterval(updateN, 1000);
+function updateN(){
+    num.textContent = N++;
+    if(N > 2){
+        hi.textContent = "persons in this area";
+    }
 }
