@@ -37,7 +37,11 @@ function insertTheFuckingData() {
 function getMeDataNoi(num,hi) {
   onValue(ref(db, "number"),  (snapshot) => {
     const data = snapshot.val();
-    num.textContent = data;
+    if(data<=99){
+    num.textContent = data;}
+    else{
+      num.textContent = "99+";
+    }
     if(data>=2){updateN(hi);}
     // console.log(data);
     // updater(data);
