@@ -19,6 +19,8 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+var played = false;
+const ad = new Audio("Audioo/AA.mp3");
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getDatabase(app , "https://krub-embed-boooom-default-rtdb.firebaseio.com/");
@@ -32,20 +34,27 @@ function insertTheFuckingData() {
   .catch(() => {alert("error bro")});
 }
 
-function getMeDataNoi(updater) {
+function getMeDataNoi(num,hi) {
   onValue(ref(db, "number"),  (snapshot) => {
     const data = snapshot.val();
+    num.textContent = data;
+    if(data>=2){updateN(hi);}
     // console.log(data);
-    updater(data);
+    // updater(data);
   });
 }
 
-// insertTheFuckingData();
-getMeDataNoi(updateBox);
+  function updateN(hi){
+            hi.textContent = "persons in this area";
+      
+ }
 
-function updateBox (data_to_display) {
-  const box =document.querySelector('.Box');
-  box.textContent = data_to_display;
-}
+// insertTheFuckingData();
+
+
+// function updateBox (data_to_display) {
+//   const box =document.querySelector('.Box');
+//   box.textContent = data_to_display;
+// }
 
 export { getMeDataNoi };
