@@ -1,12 +1,12 @@
 @import url('http://fonts.cdnfonts.com/css/gt-pressura-mono');
-body {
-    height: 100%;
-    background-color: aliceblue;
-    background-image: url(Photo/number_texture.jpg);
-    background-size: 2000px 1100px;
-    background-repeat: no-repeat;
-    overflow-x: hidden;
-  }
+html{
+  background: url(Photo/background2.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: aliceblue;
+}
   h1{
  font-family: 'GT Pressura Mono', sans-serif;
  font-size: 10vw;

@@ -73,4 +73,23 @@ function updateN(hi) {
 //   box.textContent = data_to_display;
 // }
 
-export { getMeDataNoi }
+/* FUCKING table[2][2]; *
+ * inc,st               *
+ *                      *
+ * data->   0    1      *
+ * state                *
+ * |                    *
+ * v                    *
+ * 0       01   00      *
+ * 1       01   10      */
+
+var state = false
+function updateDataNoi(num) {
+  onValue(ref(db, 'truth'), (snapshot) => {
+    const data = snapshot.val()
+    num.textContent += state && data
+    state = !data
+  })
+}
+
+export { getMeDataNoi, updateDataNoi }
