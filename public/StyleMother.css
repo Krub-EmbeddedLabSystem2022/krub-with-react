@@ -25,11 +25,11 @@ html{
     font-family: 'GT Pressura Mono', sans-serif;
     font-size: 30vw; 
     line-height: 40vw;
-    width: 30%;
+    width: 90%;
     margin:0;
     padding:0;
     transform: scaleY(1.2);
-    text-align: center ;
+    text-align: right ;
     color: rgb(255, 255, 255,0.8);/*
     -webkit-background-clip: text;
 	background-clip: text;

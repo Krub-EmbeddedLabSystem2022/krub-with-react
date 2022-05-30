@@ -1,7 +1,8 @@
-import { getMeDataNoi } from './firebase-thing.js';
+import {updateDataNoi, updateDataNoi2} from './firebase-thing.js';
 var num = document.getElementById("number");
 var hi = document.getElementById("pee");
-getMeDataNoi(num,hi);
+updateDataNoi(num,hi);
+updateDataNoi2(num,hi);
 
 
 

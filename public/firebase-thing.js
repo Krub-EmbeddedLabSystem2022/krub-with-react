@@ -45,26 +45,8 @@ function insertTheFuckingData() {
     })
 }
 
-function getMeDataNoi(num, hi) {
-  onValue(ref(db, 'number'), (snapshot) => {
-    const data = snapshot.val()
-    if (data <= 99) {
-      num.textContent = '99'
-    } else {
-      num.textContent = '99'
-    }
-    if (data >= 2) {
-      updateN(hi)
-    }
-    // num.textContent = '99+'
-    // console.log(data);
-    // updater(data);
-  })
-}
 
-function updateN(hi) {
-  hi.textContent = 'persons in this area'
-}
+
 
 // insertTheFuckingData();
 
@@ -83,14 +65,25 @@ function updateN(hi) {
  * 0       01   00      *
  * 1       01   10      */
 
-var state = false
+var state = 0;
+var total = 0;
 function updateDataNoi(num, hi) {
   onValue(ref(db, 'truth'), (snapshot) => {
-    const data = snapshot.val()
-    num.textContent += state && data
-    state = !data
+    const data = snapshot.val();
+    if(data == 0){state = 1;}
+    if(data == 1 && state == 1){total+=1; state = 0;
+    num.textContent = total;}
   })
-  if (data >= 2) updateN(hi)
+ 
+}
+function updateDataNoi2(num, hi) {
+  onValue(ref(db, 'people_out'), (snapshot) => {
+    const data = snapshot.val();
+    if(data == 0){state = 1;}
+    if(data == 1 && state == 1){if(total==0){}else{total-=1; state = 0;}
+    num.textContent = total;}
+  })
+
 }
 
-export { getMeDataNoi, updateDataNoi }
+export { updateDataNoi , updateDataNoi2}
