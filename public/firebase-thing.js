@@ -56,7 +56,7 @@ function getMeDataNoi(num, hi) {
     if (data >= 2) {
       updateN(hi)
     }
-    num.textContent = '99+'
+    // num.textContent = '99+'
     // console.log(data);
     // updater(data);
   })
@@ -84,12 +84,13 @@ function updateN(hi) {
  * 1       01   10      */
 
 var state = false
-function updateDataNoi(num) {
+function updateDataNoi(num, hi) {
   onValue(ref(db, 'truth'), (snapshot) => {
     const data = snapshot.val()
     num.textContent += state && data
     state = !data
   })
+  if (data >= 2) updateN(hi)
 }
 
 export { getMeDataNoi, updateDataNoi }
