@@ -68,22 +68,12 @@ function insertTheFuckingData() {
 var state = 0;
 var total = 0;
 function updateDataNoi(num, hi) {
-  onValue(ref(db, 'truth'), (snapshot) => {
+  onValue(ref(db, 'total_in_room'), (snapshot) => {
     const data = snapshot.val();
-    if(data == 0){state = 1;}
-    if(data == 1 && state == 1){total+=1; state = 0;
-    num.textContent = total;}
-  })
+    num.textContent = data;})
+  }
  
-}
-function updateDataNoi2(num, hi) {
-  onValue(ref(db, 'people_out'), (snapshot) => {
-    const data = snapshot.val();
-    if(data == 0){state = 1;}
-    if(data == 1 && state == 1){if(total==0){}else{total-=1; state = 0;}
-    num.textContent = total;}
-  })
 
-}
 
-export { updateDataNoi , updateDataNoi2}
+
+export { updateDataNoi}
